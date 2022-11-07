@@ -1,0 +1,173 @@
+{% extends 'base/bases.html' %}
+{% block content %}
+{% load static %}
+<main role="main">
+        <section class="intro">
+            <div class="container">
+                       <!-- <h1 class="display-3">X-GHOSTS<br>We're the HOST<br>Always THE MOST!</h1>-->
+                        <img src="{% static 'imgs/POSTER.png' %}" width="100%" height="100%">
+            </div>
+        </section>
+        <!--end:Intro -->
+        <section class="space-md">
+            <!-- portfolio -->
+            <div id="portfolio" class="container">
+                <div id="portfolio-filters">
+                    <ul id="filters" class="p-0">
+                        <li><a href="*" class="active">All Members</a></li>
+                        <li><a href=".digital">Team Content</a></li>
+                        <li><a href=".branding">Team Edit</a></li>
+                        <li><a href=".campaigns">Team Event</a></li>
+                    </ul>
+                </div>
+                <div class="grid" data-cols="4" data-margin="0" data-height="1" data-masonry='{ "columnWidth": 200, "itemSelector": ".entry" }'>
+                    <!-- entry -->
+                    <div class="entry work-entry branding digital campaigns">
+                        <a href="/CeoNhy">
+                            <div class="entry-image imageBG" data-img="{% static 'imgs/CeoNhy.png' %}"></div>
+                            <div class="work-entry-hover">
+                                <div class="work-entry-content">
+                                    <div class="work-entry-title">Cao Uyển Nhi</div>
+                                    <div class="work-entry-cat">Leader</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end:entry -->
+                    <div class="entry work-entry digital">
+                        <a href="/HaiLong">
+                            <div class="entry-image imageBG" data-img="{% static 'imgs/HaiLong.jpg' %}"></div>
+                            <div class="work-entry-hover">
+                                <div class="work-entry-content">
+                                    <div class="work-entry-title">Nguyễn Hải Long</div>
+                                    <div class="work-entry-cat">Leader Content</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end:entry -->
+                    <div class="entry work-entry branding">
+                        <a href="/HaiNam">
+                            <div class="entry-image imageBG" data-img="{% static 'imgs/HaiNam2.jpg' %}"></div>
+                            <div class="work-entry-hover">
+                                <div class="work-entry-content">
+                                    <div class="work-entry-title">Võ Hải Nam</div>
+                                    <div class="work-entry-cat">Leader Edit</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end:entry -->
+                    <div class="entry work-entry digital campaigns">
+                        <a href="/BaoLong">
+                            <div class="entry-image imageBG" data-img="{% static 'imgs/BaoLong.jpg' %}"></div>
+                            <div class="work-entry-hover">
+                                <div class="work-entry-content">
+                                    <div class="work-entry-title">Võ Hồ Bảo Long</div>
+                                    <div class="work-entry-cat">Leader Event</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end:entry -->
+                    <div class="entry work-entry digital">
+                        <a href="/QDice">
+                            <div class="entry-image imageBG" data-img="{% static 'imgs/QDice.jpg' %}"></div>
+                            <div class="work-entry-hover">
+                                <div class="work-entry-content">
+                                    <div class="work-entry-title">Nguyễn Quốc Đại</div>
+                                    <div class="work-entry-cat">Leader Communication</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end:entry -->
+                    <div class="entry work-entry">
+                        <a href="project.html">
+                            <div class="entry-image imageBG" data-img="{% static 'assets/img/photo-1557941760-987c3f403d5a.jpg' %}"></div>
+                            <div class="work-entry-hover">
+                                <div class="work-entry-content">
+                                    <div class="work-entry-title">Pine Street</div>
+                                    <div class="work-entry-cat">Web + Digital</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end:entry -->
+                     <!-- end:entry -->
+                    <div class="entry work-entry">
+                        <a href="project.html">
+                            <div class="entry-image imageBG" data-img="{% static 'assets/img/photo-1557941760-987c3f403d5a.jpg' %}"></div>
+                            <div class="work-entry-hover">
+                                <div class="work-entry-content">
+                                    <div class="work-entry-title">Pine Street</div>
+                                    <div class="work-entry-cat">Web + Digital</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end:entry -->
+                    <div class="entry work-entry digital">
+                        <a href="/Huyen">
+                            <div class="entry-image imageBG" data-img="{% static 'imgs/Huyen.jpg' %}"></div>
+                            <div class="work-entry-hover">
+                                <div class="work-entry-content">
+                                    <div class="work-entry-title">Thái Thị Kim Huyền</div>
+                                    <div class="work-entry-cat">Secretary</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end:entry -->
+                    <div class="entry work-entry digital">
+                        <a href="/Khoa">
+                            <div class="entry-image imageBG" data-img="{% static 'imgs/Khoa.jpg' %}"></div>
+                            <div class="work-entry-hover">
+                                <div class="work-entry-content">
+                                    <div class="work-entry-title">Đặng Trần Anh Khoa</div>
+                                    <div class="work-entry-cat">Report & Content Creator</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="entry work-entry branding">
+                        <a href="/MyAnh">
+                            <div class="entry-image imageBG" data-img="{% static 'imgs/MyAnh.jpg' %}"></div>
+                            <div class="work-entry-hover">
+                                <div class="work-entry-content">
+                                    <div class="work-entry-title">Phạm Huỳnh Mỹ Anh</div>
+                                    <div class="work-entry-cat">Editor</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- end:entry -->
+                    <div class="entry work-entry branding">
+                        <a href="TanLoc">
+                            <div class="entry-image imageBG" data-img="{% static 'imgs/TanLoc.png' %}"></div>
+                            <div class="work-entry-hover">
+                                <div class="work-entry-content">
+                                    <div class="work-entry-title">Nguyễn Tấn Lộc</div>
+                                    <div class="work-entry-cat">Camera Man</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="entry work-entry digital campaigns">
+                        <a href="/Bao">
+                            <div class="entry-image imageBG" data-img="{% static 'imgs/Bao.jpg' %}"></div>
+                            <div class="work-entry-hover">
+                                <div class="work-entry-content">
+                                    <div class="work-entry-title">Lương Gia Bảo</div>
+                                    <div class="work-entry-cat">Content Creator</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /end:portfolio -->
+        </section>
+    </main>
+{% endblock content %}

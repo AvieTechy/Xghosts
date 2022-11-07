@@ -1,0 +1,49 @@
+{% extends 'base/bases.html' %}
+{% block content %}
+{% load static %}
+ <main role="main">
+        <section class="pt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="project-sidebar">
+                            <!-- Place your project images here -->
+                            <figure><img src="{% static 'imgs/HaiNam2.jpg' %}" alt="" class="img-fluid"></figure>
+                            <figure><img src="{% static 'imgs/HaiNam.jpg' %}" alt="" class="img-fluid"></figure>
+                            <figure><img src="{% static 'imgs/HaiNam3.png' %}" alt="" class="img-fluid"></figure>
+                        </div>
+                    </div>
+                    <!-- end:col -->
+                    <div class="col-md-5 pl-lg-5 pl-md-5">
+                        <div class="sticky-top pt-5">
+                            <h1>
+                                VÕ HẢI NAM
+                            </h1>
+                            <p class="lead mt-4">
+                                "Hoàn thiện bản thân qua từng ngày,
+Tận hưởng                           khoảnh khắc sống từng giây"
+                            </p>
+                            <hr class="mt-5">
+                            <div class="row mt-5">
+                                <div class="col-md-12">
+                                    <p><strong>Mã số sinh viên</strong>
+                                        <br>22127288</p>
+                                    <p><strong>Số điện thoại</strong>
+                                        <br>0976729989</p>
+                                    <p><strong>Vai Trò Trong Nhóm</strong>
+                                        <br>Trưởng chỉnh sửa bài viết, slides và video.</p>
+                                        <p><strong>Liên Hệ</strong>
+                                            <br><span>Facebook: </span><a href="https://www.facebook.com/hinam201">Võ Hải Nam</a></p>
+                                </div>
+
+                            </div>
+                            <!-- end:col -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end:row -->
+                <hr class="mt-5">
+            </div>
+        </section>
+    </main>
+{% endblock content %}
