@@ -1,10 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base/bases.html' %}
+{% block content %}
+{% load static %}
+ <main role="main">
+        <section class="pt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="project-sidebar">
+                            <!-- Place your project images here -->
+                            <figure><img src="{% static 'imgs/huyen.jpg' %}" alt="" class="img-fluid"></figure>
+                            <figure><img src="{% static 'imgs/huyen1.jpg' %}" alt="" class="img-fluid"></figure>
+                        </div>
+                    </div>
+                    <!-- end:col -->
+                    <div class="col-md-5 pl-lg-5 pl-md-5">
+                        <div class="sticky-top pt-5">
+                            <h1>
+                                THÁI THỊ KIM HUYỀN
+                            </h1>
+                            <p class="lead mt-4">
+                                “Thành công không phải vượt qua người khác mà là vượt qua bạn của ngày hôm qua.”
+                            </p>
+                            <hr class="mt-5">
+                            <div class="row mt-5">
+                                <div class="col-md-12">
+                                    <p><strong>Mã số sinh viên</strong>
+                                        <br>xx - xxx - 169</p>
+                                    <p><strong>Vai Trò Trong Nhóm</strong>
+                                        <br>Secretary</p>
+                                        <p><strong>Liên Hệ</strong>
+                                            <br><span>Facebook: </span><a href="https://www.facebook.com/ttkimhuyen">Thái Thị Kim Huyền</a></p>
+                                </div>
 
-</body>
-</html>
+                            </div>
+                            <!-- end:col -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end:row -->
+                <hr class="mt-5">
+            </div>
+        </section>
+    </main>
+{% endblock content %}

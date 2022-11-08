@@ -1,0 +1,41 @@
+{% extends 'base/bases.html' %}
+{% block content %}
+{% load static %}
+ <main role="main">
+        <section class="pt-4">
+            <div class="container">
+                <div class="row d-flex align-items-center">
+
+                <div class="gallery">
+                  <a  href="/doc1">
+                    <img src="{% static 'imgs/1.png' %}" alt="Cinque Terre" width="600" height="400">
+                  </a>
+                  <div class="desc">Biên Bản Họp Lần 1 <br> <small>Ngày: 26/10/2022</small></div>
+                </div>
+
+                <div class="gallery">
+                  <a href="/doc2">
+                    <img src="{% static 'imgs/2.png' %}" alt="Forest" width="600" height="400">
+                  </a>
+                  <div class="desc">Biên Bản Họp Lần 2 <br> <small>Ngày: 30/10/2022</small></div>
+                </div>
+
+                <div class="gallery">
+                  <a href="/doc3">
+                    <img src="{% static 'imgs/3.png' %}" alt="Northern Lights" width="600" height="400">
+                  </a>
+                  <div class="desc">Biên Bản Họp Lần 3 <br> <small>Ngày: 1/11/2022</small></div>
+                </div>
+
+                <div class="gallery">
+                  <a href="/doc4">
+                    <img src="{% static 'imgs/4.png' %}" alt="Mountains" width="600" height="400">
+                  </a>
+                  <div class="desc">Biên Bản Họp Lần 4 <br> <small>Ngày: 9/11/2022</small></div>
+                </div>
+                </div>
+                <hr class="mt-5">
+            </div>
+        </section>
+    </main>
+{% endblock content %}

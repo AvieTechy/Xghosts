@@ -1,10 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base/bases.html' %}
+{% block content %}
+{% load static %}
+ <main role="main">
+        <section class="pt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="project-sidebar">
+                            <!-- Place your project images here -->
+                            <figure><img src="{% static 'imgs/Khoa.jpg' %}" alt="" class="img-fluid"></figure>
 
-</body>
-</html>
+                        </div>
+                    </div>
+                    <!-- end:col -->
+                    <div class="col-md-5 pl-lg-5 pl-md-5">
+                        <div class="sticky-top pt-5">
+                            <h1>
+                               ĐẶNG TRẦN ANH KHOA
+                            </h1>
+                            <p class="lead mt-4">
+                                “Thỉnh thoảng con người cần một lần đẩy, một áp lực mà có thể đưa tinh thần của một người đến tuyệt vọng mới cho họ thấy được tiềm năng và ý chí của mình;
+                                <br>thấy được rằng ý chí chính là nguồn phép màu trong sự sống đầy tàn nhẫn.”
+                            </p>
+                            <hr class="mt-5">
+                            <div class="row mt-5">
+                                <div class="col-md-12">
+                                    <p><strong>Mã số sinh viên</strong>
+                                        <br>xx - xxx - 024</p>
+
+                                    <p><strong>Vai Trò Trong Nhóm</strong>
+                                        <br>Report & Content creator</p>
+                                        <p><strong>Liên Hệ</strong>
+                                            <br><span>Facebook: </span><a href="https://www.facebook.com/whytheyfearr/">Đặng Trần Anh Khoa</a></p>
+                                </div>
+
+                            </div>
+                            <!-- end:col -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end:row -->
+                <hr class="mt-5">
+            </div>
+        </section>
+    </main>
+{% endblock content %}
