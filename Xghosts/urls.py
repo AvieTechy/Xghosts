@@ -8,7 +8,7 @@ from manager.views import (
     index,
 )
 from contract.views import (
-    contract_view,  documentations_view, doc1, doc2, doc3, doc4
+    contract_view,  documentations_view, doc1, doc2, doc3, doc4, doc5, plan
 )
 from project.views import (
     project_view,
@@ -24,8 +24,10 @@ urlpatterns = [
     path('doc2/', doc4, name="doc2"),
     path('doc3/', doc4, name="doc3"),
     path('doc4/', doc4, name="doc4"),
+    path('doc5/', doc5, name="doc5"),
     path('documentations/', documentations_view, name="documentations_view"),
     path('project/', project_view, name="project_view"),
+    path('plan/', plan, name="plan"),
     path('CeoNhy/', CeoNhy, name="CeoNhy"),
     path('HaiLong/', HaiLong, name="HaiLong"),
     path('BaoLong/', BaoLong, name="BaoLong"),

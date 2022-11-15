@@ -18,3 +18,9 @@ def doc3(request):
 
 def doc4(request):
 	return render(request, "doc4.html")
+
+def doc5(request):
+	return render(request, "doc5.html")
+
+def plan(request):
+	return render(request, "plan.html")
