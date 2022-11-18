@@ -23,3 +23,5 @@ def BaoLong(request):
     return render(request, "BaoLong.html")
 def bee(request):
     return render(request, "bee.html")
+def boyDay(request):
+    return render(request, "boyDay.html")

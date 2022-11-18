@@ -14,7 +14,7 @@ from project.views import (
     project_view,
 )
 from members.views import (
-    Bao, CeoNhy, HaiLong, BaoLong, HaiNam, QDice, Huyen, TanLoc, Khoa, MyAnh, bee
+    Bao, CeoNhy, HaiLong, BaoLong, HaiNam, QDice, Huyen, TanLoc, Khoa, MyAnh, bee, boyDay
 )
 urlpatterns = [
     path('', index, name="index"),
@@ -38,7 +38,8 @@ urlpatterns = [
     path('Khoa/', Khoa, name="Khoa"),
     path('MyAnh/', MyAnh, name="MyAnh"),
     path('Bao/', Bao, name="Bao"),
-    path('bee/', bee, name="bee")
+    path('bee/', bee, name="bee"),
+    path('boyDay/', boyDay, name="boyDay),
 
 ] +static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 
