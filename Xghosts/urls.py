@@ -39,7 +39,7 @@ urlpatterns = [
     path('MyAnh/', MyAnh, name="MyAnh"),
     path('Bao/', Bao, name="Bao"),
     path('bee/', bee, name="bee"),
-    path('boyDay/', boyDay, name="boyDay),
+    path('boyDay/', boyDay, name="boyDay"),
 
 ] +static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 
