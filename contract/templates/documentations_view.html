@@ -1,47 +1,86 @@
 {% extends 'base/bases.html' %}
-{% block content %}
 {% load static %}
- <main role="main">
-        <section class="pt-4">
-            <div class="container">
-                <div class="row d-flex align-items-center">
+{% block content %}
+{% block css %}
+<style>
+    #carousel3d {
+	.carousel-3d-slide {
 
-                <div class="gallery">
-                  <a  href="/doc1">
-                    <img src="{% static 'imgs/1.png' %}" alt="Cinque Terre" width="600" height="400">
-                  </a>
-                  <div class="desc">Biên Bản Họp Lần 1 <br> <small>Ngày: 26/10/2022</small></div>
-                </div>
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		background-color: #fff;
+		padding: 10px;
+		transition: all 0.4s;
+		&.current {
+			background-color: #333;
+			color: #fff;
+			span {
+				font-size: 20px;
+				font-weight: 500;
+			}
+		}
+	}
+}
 
-                <div class="gallery">
-                  <a href="/doc2">
-                    <img src="{% static 'imgs/2.png' %}" alt="Forest" width="600" height="400">
-                  </a>
-                  <div class="desc">Biên Bản Họp Lần 2 <br> <small>Ngày: 30/10/2022</small></div>
-                </div>
+</style>
+{% endblock css %}
 
-                <div class="gallery">
-                  <a href="/doc3">
-                    <img src="{% static 'imgs/3.png' %}" alt="Northern Lights" width="600" height="400">
-                  </a>
-                  <div class="desc">Biên Bản Họp Lần 3 <br> <small>Ngày: 1/11/2022</small></div>
-                </div>
+<main role="main">
+     <div id="carousel3d">
+	<carousel-3d :perspective="0" :space="200" :display="7" :controls-visible="true" :controls-prev-html="'&#10092;'" :controls-next-html="'&#10093;'" :controls-width="30" :controls-height="60" :clickable="true" :autoplay="true" :autoplay-timeout="5000">
 
-                <div class="gallery">
-                  <a href="/doc4">
-                    <img src="{% static 'imgs/4.png' %}" alt="Mountains" width="600" height="400">
-                  </a>
-                  <div class="desc">Biên Bản Họp Lần 4 <br> <small>Ngày: 9/11/2022</small></div>
-                </div>
-                    <div class="gallery">
-                  <a href="/doc5">
-                    <img src="{% static 'imgs/5.png' %}" alt="Mountains" width="600" height="400">
-                  </a>
-                  <div class="desc">Biên Bản Họp Lần 5 <br> <small>Ngày: 15/11/2022</small></div>
-                </div>
-                </div>
-                <hr class="mt-5">
-            </div>
-        </section>
-    </main>
+        <slide :index="0">
+            <a href="/doc1">
+			 <img src="{% static 'imgs/1.png' %}" style="height: 100%; width: 100%;">
+            </a>
+        </slide>
+            <slide :index="1">
+             <img src="{% static 'imgs/2.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+		<slide :index="2">
+         <img src="{% static 'imgs/3.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+		<slide :index="3">
+		     <img src="{% static 'imgs/4.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+		<slide :index="4">
+         <img src="{% static 'imgs/5.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+		<slide :index="5">
+             <img src="{% static 'imgs/6.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+		<slide :index="6">
+         <img src="{% static 'imgs/7.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+		<slide :index="7">
+		     <img src="{% static 'imgs/8.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+		<slide :index="8">
+         <img src="{% static 'imgs/9.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+	</carousel-3d>
+</div>
+</main>
 {% endblock content %}
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.7/vue.js"> </script>
+<script src="https://wlada.github.io/vue-carousel-3d/js/carousel-3d.umd.js"> </script>
+
+<script>
+ new Vue({
+	el: "#carousel3d",
+	data: {
+		slides: 7
+	},
+	components: {
+		"carousel-3d": window["carousel-3d"].Carousel3d,
+		slide: window["carousel-3d"].Slide
+	}
+});
+
+</script>
+
+{% endblock js %}

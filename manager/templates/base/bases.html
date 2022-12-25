@@ -9,11 +9,12 @@
     <meta name="description" content="Free minimal portfolio web site template,minmal portfolio,porfolio,bootstrap template,html template,photography " />
     <link rel="icon" type="image/png" sizes="25x25" href="{% static 'imgs/logo1.png' %}">
     <title>X-ghosts</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap" rel="stylesheet">
        {% load static %}
     <link rel="stylesheet" href="{% static 'assets/css/main.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/rtl.css' %}">
+    {% block css %}
+    {% endblock css %}
     <style>
 div.gallery {
   margin: 5px;
@@ -46,6 +47,8 @@ div.desc {
 
     {% include 'base/footer.html' %}
     <script src="{% static 'assets/js/main.min.js' %}"></script>
+{% block js %}
+{% endblock js %}
 </body>
 
 </html>

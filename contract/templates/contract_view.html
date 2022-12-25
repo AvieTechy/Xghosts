@@ -1,21 +1,296 @@
 {% extends 'base/bases.html' %}
-{% block content %}
+
 {% load static %}
+
+{% block css %}
+<style>
+    #carousel3d {
+	.carousel-3d-slide {
+
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		background-color: #fff;
+		padding: 10px;
+		transition: all 0.4s;
+		&.current {
+			background-color: #333;
+			color: #fff;
+			span {
+				font-size: 20px;
+				font-weight: 500;
+			}
+		}
+	}
+}
+
+h1 {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #FFFFFF;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+h1 span {
+  display: block;
+  font-size: 0.5em;
+  line-height: 1.3;
+}
+h1 em {
+  font-style: normal;
+  font-weight: 600;
+}
+.eleven h1 {
+  font-size:30px;text-align:center; line-height:1.5em; padding-bottom:45px; font-family:"Playfair Display", serif; text-transform:uppercase;letter-spacing: 2px; color:#111;
+}
+
+.twelve h1 {
+  font-size:26px; font-weight:700;  letter-spacing:1px; text-transform:uppercase; width:160px; text-align:center; margin:auto; white-space:nowrap; padding-bottom:13px;
+}
+.twelve h1:before {
+    background-color: #c50000;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 5px;
+}
+.twelve h1:after {
+    background-color: #c50000;
+    content: '';
+    display: block;
+  position:absolute; right:0; bottom:0;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 0.25em;
+}
+.nameCardleader{
+    width: 15%;
+    margin: auto;
+    height: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: white;
+    color: black;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    opacity: 0.8;
+    cursor: pointer;
+
+   }
+  .nameCardleader a{
+
+  }
+   .nameCardleader span{
+font-weight: normal;
+}
+.nameCardleader:hover{
+background-color: #243238;
+color: white;
+box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+opacity: 1;
+}
+.nameCardleader2{
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #FFFFFF;
+    color: black;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.nameCardleader2 span{
+font-weight: normal;
+}
+.nameCardleader2:hover{
+background-color: #243238;
+color: white;
+box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+opacity: 1;
+}
+.nameCardmem{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #FFFFFF;
+    color: black;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    opacity: 0.8;
+    cursor: pointer;
+}
+.nameCardmem span{
+font-weight: normal;
+}
+.nameCardmem:hover{
+background-color: #243238;
+color: white;
+box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+opacity: 1;
+}
+.boxPosition{
+margin-top: 20px;
+margin-bottom: 20px;
+
+}
+</style>
+{% endblock css %}
+{% block content %}
+
  <main role="main">
-        <section class="pt-4">
-            <div class="container">
-                <div class="row d-flex align-items-center">
-                    <div class="col-md-6">
-                        <div style="background: black; width: 100px; border-top-right-radius:15px; text-align: center; padding:5px; height: 40px;">Hợp Đồng</div>
-                        <iframe src="{% static 'doc/contract.pdf' %}" width="100%" height="550px"></iframe>
-                    </div>
-                    <div class="col-md-6">
-                        <div style="background: black; width: 150px; border-top-right-radius:15px; text-align: center; padding:5px; height: 40px;">Bảng Phân Công</div>
-                        <iframe src="{% static 'doc/divide.pdf' %}" width="100%" height="550px"></iframe>
-                    </div>
-                </div>
-                <hr class="mt-5">
-            </div>
-        </section>
-    </main>
+ <div id="carousel3d">
+     <div class="twelve">
+  <h1 style="color: white;">Hợp Đồng</h1>
+</div>
+	<carousel-3d :perspective="0" :space="200" :display="5" :controls-visible="true" :controls-prev-html="'&#10092;'" :controls-next-html="'&#10093;'" :controls-width="30" :controls-height="60" :clickable="true" :autoplay="true" :autoplay-timeout="5000">
+		<slide :index="0">
+			 <img src="{% static 'imgs/contract1.png' %}" style="height: 100%; width: 100%;">
+		</slide>
+		<slide :index="1">
+             <img src="{% static 'imgs/contract-2.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+		<slide :index="2">
+         <img src="{% static 'imgs/contract-3.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+		<slide :index="3">
+		     <img src="{% static 'imgs/contract-4.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+		<slide :index="4">
+         <img src="{% static 'imgs/contract-5.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+		<slide :index="5">
+		 <img src="{% static 'imgs/contract-6.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+		<slide :index="6">
+         <img src="{% static 'imgs/contract-7.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+        <slide :index="7">
+         <img src="{% static 'imgs/contract-8.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+        <slide :index="8">
+         <img src="{% static 'imgs/contract-9.png' %}" style="height: 100%; width: 100%;">
+        </slide>
+
+	</carousel-3d>
+
+     <br>
+     <div class="twelve">
+          <h1 style="color: white;">Phân Công </h1>
+     </div>
+     <div class="row">
+
+         <div class="col-lg-12 boxPosition" align="center">
+             <div class="nameCardleader" onclick="location.href='/CeoNhy';" >
+                 Cao Uyển Nhi <br>
+                     Leader
+             </div>
+         </div>
+     </div>
+     <div class="row">
+         <div class="col-lg-2 text-center boxPosition"></div>
+         <div class="col-lg-2 text-center boxPosition" align="center">
+             <div class="nameCardleader2" onclick="location.href='/QDice';">
+                 Nguyễn Quốc Đại <br>
+                 <span>Main Secretary</span>
+
+             </div>
+         </div>
+          <div class="col-lg-2 text-center boxPosition" align="center">
+             <div class="nameCardleader2" onclick="location.href='/HaiLong';" >
+                 Nguyễn Hải Long <br>
+                 <span>Leader Content</span>
+
+             </div>
+         </div>
+         <div class="col-lg-2 text-center boxPosition" align="center">
+             <div class="nameCardleader2" onclick="location.href='/HaiNam';" >
+                 Võ Hải Nam<br>
+                 <span>Leader Edit</span>
+
+             </div>
+         </div>
+         <div class="col-lg-2 text-center boxPosition" align="center">
+             <div class="nameCardleader2" onclick="location.href='/BaoLong';" >
+                 Võ Hồ Bảo Long <br>
+                 <span>Leader Event</span>
+             </div>
+         </div>
+         <div class="col-lg-2 text-center boxPosition"></div>
+     </div>
+     <div class="row">
+         <div class="col-lg-1 text-center" >
+
+         </div>
+         <div class="col-lg-2 text-center boxPosition" align="center">
+             <div class="nameCardmem" onclick="location.href='/Huyen';" >
+                 Thái Thị <br> Kim Huyền <br>
+                 <span>Secretary</span>
+             </div>
+         </div>
+         <div class="col-lg-2 text-center boxPosition" align="center">
+             <div class="nameCardmem" onclick="location.href='/Khoa';" >
+                 Đặng Trần <br> Anh Khoa<br>
+                 <span>Report Maker</span>
+             </div>
+         </div>
+         <div class="col-lg-2 text-center boxPosition" align="center">
+             <div class="nameCardmem" onclick="location.href='/TanLoc';" >
+                 Nguyễn Tấn Lộc<br>
+                 <span>Camera Man / Content Creator</span>
+             </div>
+         </div>
+         <div class="col-lg-2 text-center boxPosition" align="center">
+             <div class="nameCardmem" onclick="location.href='/MyAnh';" >
+                 Phạm Huỳnh <br> Mỹ Anh <br>
+                 <span>Editor</span>
+             </div>
+         </div>
+         <div class="col-lg-2 text-center boxPosition" align="center">
+             <div class="nameCardmem" onclick="location.href='/Bao';" >
+                 Lương Gia Bảo <br>
+                 <span>Content Creator / Editor</span>
+             </div>
+         </div>
+
+     </div>
+</div>
+
+ </main>
 {% endblock content %}
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.7/vue.js"> </script>
+<script src="https://wlada.github.io/vue-carousel-3d/js/carousel-3d.umd.js"> </script>
+
+<script>
+ new Vue({
+	el: "#carousel3d",
+	data: {
+		slides: 7
+	},
+	components: {
+		"carousel-3d": window["carousel-3d"].Carousel3d,
+		slide: window["carousel-3d"].Slide
+	}
+});
+
+</script>
+
+{% endblock js %}
