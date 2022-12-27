@@ -5,14 +5,15 @@
 @import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light");
 section {
   position: absolute;
-  top: 22%;
+  top: 240px;
   left: 0;
   align: center;
-  height: 400px;
+  text-align: center;
+  padding-top: 40px;
+  height: 360px;
   width: 100%;
   background: #253339;
-  background-image: url("{% static 'imgs/timeline2.png' %}");
-  background-size: cover;
+
   z-index: -10;
 }
 .timeline1{
@@ -25,7 +26,15 @@ section {
   height: 500px;
   text-align: right;
   }
+.off {
+    display:block;
+    transition: 1s all;
 
+}
+.on {
+    display:none;
+
+}
 * {
   transition: 1s all;
 }
@@ -37,12 +46,13 @@ input {
 .switch {
   position: relative;
   padding: 8px;
-  margin: 10px;
+  margin-top: -2%;
+  margin-right: 1%;
   display: inline-block;
   width: 95px;
   height: 45px;
   border-radius: 135px;
-  background-color: #70C6EC;
+  background-color: #798777;
   box-sizing: border-box;
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -64,7 +74,7 @@ input {
   height: 3.5px;
   width: 30px;
   background: #e0e0e0;
-  top: 13px;
+  top: 45%;
   left: 0px;
 }
 
@@ -89,7 +99,7 @@ input {
 .bb8-head:before {
   position: absolute;
   content: "";
-  background: black;
+  background: #555555;
   height: 9px;
   width: 9px;
   border-radius: 50%;
@@ -99,7 +109,7 @@ input {
 .bb8-head:after {
   position: absolute;
   content: "";
-  background: black;
+  background: #555555;
   height: 5px;
   width: 5px;
   border-radius: 50%;
@@ -133,10 +143,16 @@ input[type=checkbox]:checked + label .bottom-head {
 
 input[type=checkbox]:checked + label ~ section {
       background-color: #F0D8A8;
-       background-image: url("{% static 'imgs/timeline.png' %}");
-  background-size: cover;
+}
+input[type=checkbox]:checked + label ~section .off {
+    display: none;
+
 }
 
+input[type=checkbox]:checked + label ~section .on {
+    display: block;
+;
+}
 h1 {
   position: relative;
   padding: 0;
@@ -161,8 +177,7 @@ h1 em {
 }
 
 .twelve h1 {
-   position: absolute;
-   left: 20px;
+    align: center;
   font-size:26px; font-weight:700;  letter-spacing:1px; text-transform:uppercase; width:160px; text-align:center; margin:auto; white-space:nowrap; padding-bottom:13px;
 }
 .twelve h1:before {
@@ -182,13 +197,61 @@ h1 em {
     width: 75px;
     margin-bottom: 0.25em;
 }
+
+.imgHop{
+width: 100%;
+height: auto;
+margin-top: 30px;
+border-radius: 20px;
+ box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+
+}
+.btnKN{
+background-color: #798777;
+width: 100%;
+height: 70px;
+font-size: 25px;
+}
 </style>
 {% endblock css %}
 
 {% block content %}
  <main role="main">
+       <button type="button" class="btnKN" data-toggle="modal" data-target="#myModal">Kế Hoạch</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" style="color: black;">Kế Hoạch</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+           <div class="container">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-12">
+                        <iframe src="/static/doc/plan.pdf" width="100%" height="500px"></iframe>
+                    </div>
+                </div>
+                <hr class="mt-5">
+            </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+<br>
+     <br>
+     <div class="twelve">
+                <h1 style="color: white;">Timeline</h1>
+            </div>
      <div class="containerBox">
     <!--checkbox -->
+
 <input type="checkbox" id="bb8-checkbox">
 
   <!--label connected to checkbox -->
@@ -220,12 +283,78 @@ h1 em {
 
   <!--end bb8 wrapper -->
   </label>
+
          <section>
-              <div class="twelve" >
-                <h1 style="color: white;">Timeline</h1>
-            </div>
+             <div class="off" >
+                    <div class="row">
+                        <div class="col-lg-1"> </div>
+                        <div class="col-lg-2">
+                            <h3>Timeline 1 </h3>
+                            <h6> 11:25am ngày 26/10/2022</h6>
+                            <img src="{% static 'imgs/hop1.jpg' %}" class="imgHop">
+                        </div>
+                        <div class="col-lg-2">
+                            <h3>Timeline 2</h3>
+                            <h6> 2:00pm ngày 30/10/2022</h6>
+                            <img src="{% static 'imgs/hop2.png' %}" class="imgHop">
+                        </div>
+                        <div class="col-lg-2">
+                            <h3>Timeline 3</h3>
+                            <h6>  1:50pm ngày 1/11/2022</h6>
+                            <img src="{% static 'imgs/hop3.jpg' %}" class="imgHop">
+                        </div>
+                        <div class="col-lg-2">
+                            <h3>Timeline 4</h3>
+                            <h6> 1:20pm ngày 08/11/2022</h6>
+                                <img src="{% static 'imgs/hop4.jpg' %}" class="imgHop">
+                        </div>
+                        <div class="col-lg-2">
+                            <h3>Timeline 5</h3>
+                            <h6>  1:00pm ngày 15/11/2022</h6>
+
+                            <img src="{% static 'imgs/hop5.png' %}" class="imgHop">
+
+                        </div>
+                    </div>
+                 </div>
+
+             <div class="on">
+                    <div class="row">
+                        <div class="col-lg-1"> </div>
+                        <div class="col-lg-2">
+                            <h3 style="color: #253339">Timeline 6 </h3>
+                            <h6 style="color: #253339"> 1:00pm ngày 22/11/2022</h6>
+                            <img src="{% static 'imgs/hop5.png' %}" class="imgHop">
+                        </div>
+                        <div class="col-lg-2">
+                            <h3 style="color: #253339">Timeline 7</h3>
+                            <h6 style="color: #253339"> 1:30pm ngày 29/11/2022</h6>
+                            <img src="{% static 'imgs/hop7.jpg' %}" class="imgHop">
+                        </div>
+                        <div class="col-lg-2">
+                            <h3 style="color: #253339">Timeline 8</h3>
+                            <h6 style="color: #253339"> 1:30pm ngày 6/12/2022</h6>
+                            <img src="{% static 'imgs/hop8.png' %}" class="imgHop">
+                        </div>
+                        <div class="col-lg-2">
+                            <h3 style="color: #253339">Timeline 9</h3>
+                            <h6 style="color: #253339"> 1:00pm ngày 13/12/2022</h6>
+                                <img src="{% static 'imgs/hop9.png' %}" class="imgHop">
+                        </div>
+                        <div class="col-lg-2">
+                            <h3 style="color: #253339">Timeline 10</h3>
+                            <h6 style="color: #253339"> 1:30pm ngày 21/12/2022</h6>
+
+                            <img src="{% static 'imgs/hop10.png' %}" class="imgHop">
+
+                        </div>
+                    </div>
+                 </div>
          </section>
+
      </div>
+
+
  </main>
 {% endblock content %}
 
