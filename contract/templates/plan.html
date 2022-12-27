@@ -1,16 +1,233 @@
 {% extends 'base/bases.html' %}
-{% block content %}
 {% load static %}
+{% block css %}
+<style>
+@import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light");
+section {
+  position: absolute;
+  top: 22%;
+  left: 0;
+  align: center;
+  height: 400px;
+  width: 100%;
+  background: #253339;
+  background-image: url("{% static 'imgs/timeline2.png' %}");
+  background-size: cover;
+  z-index: -10;
+}
+.timeline1{
+    width: 100%;
+    height: 200px;
+}
+.containerBox {
+  margin: 0;
+  padding: 20px;
+  height: 500px;
+  text-align: right;
+  }
+
+* {
+  transition: 1s all;
+}
+
+input {
+  display: none;
+}
+
+.switch {
+  position: relative;
+  padding: 8px;
+  margin: 10px;
+  display: inline-block;
+  width: 95px;
+  height: 45px;
+  border-radius: 135px;
+  background-color: #70C6EC;
+  box-sizing: border-box;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.bb8-body {
+  position: absolute;
+  display: block;
+  height: 30px;
+  width: 30px;
+  bottom: 10px;
+  border-radius: 100%;
+  background: #f0f0f0;
+  background: radial-gradient(ellipse at center, #f0f0f0 0%, #ebebeb 72%, #bfbfbf 100%);
+}
+.bb8-body:after {
+  content: "";
+  position: absolute;
+  height: 3.5px;
+  width: 30px;
+  background: #e0e0e0;
+  top: 13px;
+  left: 0px;
+}
+
+
+
+/********positioning of the circles*******/
+
+
+/*bb8 head*/
+.bb8-head {
+  position: absolute;
+  height: 25px;
+  width: 40px;
+  background: #f0f0f0;
+  top: -28px;
+  left: 4px;
+  z-index: 3;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background: linear-gradient(to bottom, #f0f0f0 0%, #f0f0f0 10%, #fac562 10%, #fac562 15%, #f0f0f0 16%, #f0f0f0 70%, #fac562 70%, #fac562 80%, #666666 85%, #666666 100%);
+}
+.bb8-head:before {
+  position: absolute;
+  content: "";
+  background: black;
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  top: 4px;
+  left: 8px;
+}
+.bb8-head:after {
+  position: absolute;
+  content: "";
+  background: black;
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  top: 9px;
+  left: 23px;
+}
+
+.bottom-head {
+  position: absolute;
+  border-top: 7px solid #9f9f9f;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  height: 0;
+  width: 40px;
+  top: -4px;
+  left: 4px;
+}
+
+input[type=checkbox]:checked + label .bb8-body {
+  margin-left: calc(100% - 48px);
+  transform: rotate(360deg);
+}
+
+input[type=checkbox]:checked + label .bb8-head {
+  margin-left: calc(100% - 48px);
+}
+
+input[type=checkbox]:checked + label .bottom-head {
+  margin-left: calc(100% - 48px);
+}
+
+input[type=checkbox]:checked + label ~ section {
+      background-color: #F0D8A8;
+       background-image: url("{% static 'imgs/timeline.png' %}");
+  background-size: cover;
+}
+
+h1 {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #FFFFFF;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+h1 span {
+  display: block;
+  font-size: 0.5em;
+  line-height: 1.3;
+}
+h1 em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+.twelve h1 {
+   position: absolute;
+   left: 20px;
+  font-size:26px; font-weight:700;  letter-spacing:1px; text-transform:uppercase; width:160px; text-align:center; margin:auto; white-space:nowrap; padding-bottom:13px;
+}
+.twelve h1:before {
+    background-color: #c50000;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 5px;
+}
+.twelve h1:after {
+    background-color: #c50000;
+    content: '';
+    display: block;
+  position:absolute; right:0; bottom:0;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 0.25em;
+}
+</style>
+{% endblock css %}
+
+{% block content %}
  <main role="main">
-        <section class="pt-4">
-            <div class="container">
-                <div class="row d-flex align-items-center">
-                    <div class="col-md-12">
-                        <iframe src="{% static 'doc/plan.pdf' %}" width="100%" height="550px"></iframe>
-                    </div>
-                </div>
-                <hr class="mt-5">
+     <div class="containerBox">
+    <!--checkbox -->
+<input type="checkbox" id="bb8-checkbox">
+
+  <!--label connected to checkbox -->
+<label for="bb8-checkbox" class="switch">
+    <div class="bb8">
+      <div class="bb8-head">
+      </div>
+      <div class="bottom-head"></div>
+      <!--end of head -->
+      <div class="bb8-body">
+        <div class="circle1">
+          <div class="s1"></div>
+          <div class="s2"></div>
+        </div>
+        <!--end circle1 -->
+        <div class="circle2">
+          <div class="s1"></div>
+          <div class="s2"></div>
+        </div>
+        <!--end circle2-->
+        <div class="circle3">
+          <div class="s1"></div>
+          <div class="s2"></div>
+        </div>
+        <!--end circle3 -->
+      </div>
+      <!--end bb8 body -->
+    </div>
+
+  <!--end bb8 wrapper -->
+  </label>
+         <section>
+              <div class="twelve" >
+                <h1 style="color: white;">Timeline</h1>
             </div>
-        </section>
-    </main>
+         </section>
+     </div>
+ </main>
 {% endblock content %}
+
+{% block js %}
+{% endblock js %}
